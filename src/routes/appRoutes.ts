@@ -1,4 +1,3 @@
-// src/routes/appRoutes.ts
 export type AppStackParamList = {
   Launch: undefined;
   Intro: undefined;
@@ -6,7 +5,6 @@ export type AppStackParamList = {
 
   Read: undefined;
   Puzzles: undefined;
-  Math: undefined;     // оставь если экран существует
-  Pairs: undefined;    // ✅ добавили
+  Pairs: undefined;
   Library: undefined;
 };

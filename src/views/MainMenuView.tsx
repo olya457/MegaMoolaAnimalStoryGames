@@ -19,7 +19,8 @@ const LOGO = require('../assets/logo.png');
 const ICON_GALLERY = require('../assets/icon_gallery.png');
 
 type Props = NativeStackScreenProps<AppStackParamList, 'MainMenu'>;
-type BtnKey = 'Read' | 'Puzzles' | 'Math' | 'Library' | null;
+
+type BtnKey = 'Read' | 'Puzzles' | 'Pairs' | 'Library' | null;
 
 export default function MainMenuView({ navigation }: Props) {
   const { width, height } = useWindowDimensions();
@@ -85,7 +86,7 @@ export default function MainMenuView({ navigation }: Props) {
     const buttonsMarginTop = isVerySmall ? 15 : 30;
 
     return { logoSize, btnW, btnH, gap, logoMarginTop, buttonsMarginTop };
-  }, [width, height, isVerySmall]);
+  }, [width, isVerySmall]);
 
   const go = (key: BtnKey, route: keyof AppStackParamList) => {
     setActive(key);
@@ -128,7 +129,13 @@ export default function MainMenuView({ navigation }: Props) {
           </Animated.View>
 
           <Animated.View style={{ opacity: b3A, transform: [{ translateY: b3Y }] }}>
-            <MainBtn title="Math" width={sizes.btnW} height={sizes.btnH} forceRed={active === 'Math'} onPress={() => go('Math', 'Math')} />
+            <MainBtn
+              title="Pairs"
+              width={sizes.btnW}
+              height={sizes.btnH}
+              forceRed={active === 'Pairs'}
+              onPress={() => go('Pairs', 'Pairs')}
+            />
           </Animated.View>
 
           <Animated.View style={{ opacity: b4A, transform: [{ translateY: b4Y }] }}>
